@@ -11,8 +11,8 @@ const ColorForm = props => {
 
 
   const handlePostData = e => {
-
     e.preventDefault();
+    if(color.code.hex != ""){
     axiosWithAuth()
     .post('/api/colors', color)
     .then(res => {
@@ -26,8 +26,15 @@ const ColorForm = props => {
             hex: ""
         },
       });
+    } else {
+    setColor({
+        color: "",
+        code: {
+            hex: ""
+        },
+      });
   };
-
+  }
   const handleChanges = e => {
       if(e.target.name !== 'code'){
     setColor({ ...color, [e.target.name]: e.target.value });
@@ -41,7 +48,8 @@ const ColorForm = props => {
   return (
     <>
     <form className="inputForm" onSubmit={handlePostData}>
-      <label htmlFor="name">Color Name:</label>
+    <legend>Add Color</legend>
+      <label htmlFor="name">Name:</label>
       <input
         id="color"
         type="text"
