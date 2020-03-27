@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {axiosWithAuth} from "../utils/axiosWithAuth";
 const ColorForm = props => {
     const [color, setColor] = useState({
-        id: "",
+        id: Date.now(),
         color: "",
         code: {
             hex: ""

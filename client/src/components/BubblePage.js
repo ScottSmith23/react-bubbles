@@ -24,19 +24,11 @@ const BubblePage = () => {
 
 }
 
-const addColor = (newColor) => {
-  
-
-}
-
-
-
-
   return (
     <>
       <ColorList colors={colorList} updateColors={setColorList} getColors={getColors} />
       <Bubbles colors={colorList} />
-      <ColorForm addColor={addColor} getColors={getColors}/>
+      <ColorForm getColors={getColors}/>
     </>
   );
 };
