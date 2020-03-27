@@ -48,7 +48,8 @@ const ColorForm = props => {
   return (
     <>
     <form className="inputForm" onSubmit={handlePostData}>
-    <legend>Add Color</legend>
+    <h4>Add Color</h4>
+    <span>
       <label htmlFor="name">Name:</label>
       <input
         id="color"
@@ -56,7 +57,8 @@ const ColorForm = props => {
         name="color"
         onChange={handleChanges}
         value={color.color}
-      />
+      /></span>
+      <span>
       <label htmlFor="code">hex:</label>
       <input
         id="code"
@@ -64,6 +66,7 @@ const ColorForm = props => {
         onChange={handleChanges}
         value={color.code.hex}
       />
+      </span>
       <button className="buttonGet" type="submit">Add Color</button>
     </form>
     </>
